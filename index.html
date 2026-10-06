@@ -8,37 +8,114 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Supabase -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
 
+<!-- LOGIN -->
+<div id="loginScreen" class="login-screen">
+
+    <div class="login-box">
+
+        <h1>🌿 Nature</h1>
+        <p>Family & Friends Gallery</p>
+
+        <input
+            type="email"
+            id="loginEmail"
+            placeholder="Email"
+            autocomplete="email"
+        >
+
+        <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+            autocomplete="current-password"
+        >
+
+        <button id="loginBtn">🔐 Login</button>
+
+        <p id="loginMessage"></p>
+
+    </div>
+
+</div>
+
+
+<!-- MAIN WEBSITE -->
+<div id="mainSite" class="hidden">
+
 <header>
-    <h1>Nature</h1>
-    <p>Our memories, captured forever 📸</p>
+
+    <div class="top-bar">
+
+        <div>
+            <h1>Nature</h1>
+            <p>Our memories, captured forever 📸</p>
+        </div>
+
+        <button id="logoutBtn">Logout</button>
+
+    </div>
 
     <div class="buttons">
-        <button id="uploadBtn">📤 Add Photos</button>
-        <input type="file" id="fileInput" accept="image/*" multiple hidden>
+
+        <button id="uploadBtn">
+            📤 Add Photos
+        </button>
+
+        <input
+            type="file"
+            id="fileInput"
+            accept="image/*"
+            multiple
+            hidden
+        >
+
     </div>
+
 </header>
 
+
 <nav>
-    <button class="filter active" data-category="all">All</button>
-    <button class="filter" data-category="family">Family</button>
-    <button class="filter" data-category="friends">Friends</button>
-    <button class="filter" data-category="nature">Nature</button>
-    <button class="filter" data-category="groups">Groups</button>
+
+    <button class="filter active" data-category="all">
+        All
+    </button>
+
+    <button class="filter" data-category="family">
+        Family
+    </button>
+
+    <button class="filter" data-category="friends">
+        Friends
+    </button>
+
+    <button class="filter" data-category="nature">
+        Nature
+    </button>
+
+    <button class="filter" data-category="groups">
+        Groups
+    </button>
+
 </nav>
 
+
 <main>
+
     <div id="gallery" class="gallery">
-        <p class="loading">Loading photos...</p>
+        <p class="loading">
+            Loading photos...
+        </p>
     </div>
+
 </main>
 
-<!-- Upload category popup -->
+
+<!-- UPLOAD BOX -->
 <div id="uploadBox" class="upload-box hidden">
 
     <div class="upload-content">
@@ -48,33 +125,63 @@
         <p>Choose a category:</p>
 
         <select id="category">
-            <option value="family">Family</option>
-            <option value="friends">Friends</option>
-            <option value="nature">Nature</option>
-            <option value="groups">Groups</option>
+
+            <option value="family">
+                Family
+            </option>
+
+            <option value="friends">
+                Friends
+            </option>
+
+            <option value="nature">
+                Nature
+            </option>
+
+            <option value="groups">
+                Groups
+            </option>
+
         </select>
 
         <div class="upload-actions">
-            <button id="choosePhotos">Choose Photos</button>
-            <button id="cancelUpload">Cancel</button>
+
+            <button id="choosePhotos">
+                Choose Photos
+            </button>
+
+            <button id="cancelUpload">
+                Cancel
+            </button>
+
         </div>
 
     </div>
 
 </div>
 
-<!-- Fullscreen viewer -->
+
+<!-- PHOTO VIEWER -->
 <div id="viewer" class="viewer hidden">
 
-    <button id="closeViewer">✕</button>
+    <button id="closeViewer">
+        ✕
+    </button>
 
-    <button id="previousPhoto">‹</button>
+    <button id="previousPhoto">
+        ‹
+    </button>
 
     <img id="viewerImage">
 
-    <button id="nextPhoto">›</button>
+    <button id="nextPhoto">
+        ›
+    </button>
 
 </div>
+
+</div>
+
 
 <script src="script.js"></script>
 

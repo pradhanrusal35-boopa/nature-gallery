@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nature</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<header>
+    <h1>Nature</h1>
+    <p>Our memories, captured forever 📸</p>
+
+    <div class="buttons">
+        <button id="uploadBtn">📤 Add Photos</button>
+        <input type="file" id="fileInput" accept="image/*" multiple hidden>
+    </div>
+</header>
+
+<nav>
+    <button class="filter active" data-category="all">All</button>
+    <button class="filter" data-category="family">Family</button>
+    <button class="filter" data-category="friends">Friends</button>
+    <button class="filter" data-category="nature">Nature</button>
+    <button class="filter" data-category="groups">Groups</button>
+</nav>
+
+<main>
+    <div id="gallery" class="gallery">
+        <p class="loading">Loading photos...</p>
+    </div>
+</main>
+
+<!-- Upload category popup -->
+<div id="uploadBox" class="upload-box hidden">
+
+    <div class="upload-content">
+
+        <h2>Upload Photos</h2>
+
+        <p>Choose a category:</p>
+
+        <select id="category">
+            <option value="family">Family</option>
+            <option value="friends">Friends</option>
+            <option value="nature">Nature</option>
+            <option value="groups">Groups</option>
+        </select>
+
+        <div class="upload-actions">
+            <button id="choosePhotos">Choose Photos</button>
+            <button id="cancelUpload">Cancel</button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Fullscreen viewer -->
+<div id="viewer" class="viewer hidden">
+
+    <button id="closeViewer">✕</button>
+
+    <button id="previousPhoto">‹</button>
+
+    <img id="viewerImage">
+
+    <button id="nextPhoto">›</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
